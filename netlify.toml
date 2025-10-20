@@ -5,6 +5,13 @@
 
 [build]
   publish = "."
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# Custom domain configuration
+# Site name: meshivampawar
+# This will be available at: https://meshivampawar.netlify.app
   
 [[headers]]
   for = "/*"
