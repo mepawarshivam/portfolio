@@ -1,0 +1,22 @@
+{
+  "name": "portfolio-website",
+  "version": "1.0.0",
+  "description": "Professional portfolio website for Shivam Pawar - Software Developer",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "deploy": "netlify deploy --prod"
+  },
+  "keywords": [
+    "portfolio",
+    "website",
+    "developer",
+    "software-engineer",
+    "web-development"
+  ],
+  "author": "Shivam Pawar",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.0"
+  }
+}
