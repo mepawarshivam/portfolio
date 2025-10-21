@@ -325,46 +325,28 @@
                             </div>
                         </div>
                         <div class="resume-actions">
-                            <button onclick="openResumePreview()" class="btn btn-primary">
+                            <a href="assets/documents/Shivam_Pawar_Resume.pdf" target="_blank" class="btn btn-primary">
                                 <i class="fas fa-eye"></i>
                                 Preview Resume
-                            </button>
+                            </a>
                             <a href="assets/documents/Shivam_Pawar_Resume.pdf" download="Shivam_Pawar_Resume.pdf" class="btn btn-secondary">
                                 <i class="fas fa-download"></i>
                                 Download PDF
-                            </a>
-                        </div>
-                        <div class="resume-backup-actions">
-                            <p class="backup-text">Alternative access:</p>
-                            <a href="https://drive.google.com/drive/folders/1V4o-I6AA3P73k5PKXZLs9mnwaBmO16w4" target="_blank" class="btn btn-outline">
-                                <i class="fas fa-cloud"></i>
-                                View on Google Drive
                             </a>
                         </div>
                     </div>
                 </div>
                 
                 <div class="resume-preview-container">
-                    <div class="preview-placeholder" id="resumePreviewPlaceholder">
+                    <div class="preview-placeholder">
                         <i class="fas fa-file-alt"></i>
                         <h4>Resume Preview</h4>
-                        <p>Click "Preview Resume" to view the PDF in your browser, or download directly.</p>
+                        <p>Click "Preview Resume" to view the PDF in a new tab, or download it directly to your device.</p>
                         <div class="document-types">
                             <span class="doc-type"><i class="fas fa-file-pdf"></i> PDF Format</span>
-                            <span class="doc-type"><i class="fas fa-eye"></i> Browser Preview</span>
+                            <span class="doc-type"><i class="fas fa-external-link-alt"></i> New Tab Preview</span>
                             <span class="doc-type"><i class="fas fa-download"></i> Direct Download</span>
                         </div>
-                    </div>
-                    <div class="pdf-viewer" id="pdfViewer" style="display: none;">
-                        <div class="pdf-controls">
-                            <button onclick="closeResumePreview()" class="close-btn">
-                                <i class="fas fa-times"></i>
-                            </button>
-                            <a href="assets/documents/Shivam_Pawar_Resume.pdf" download="Shivam_Pawar_Resume.pdf" class="download-btn">
-                                <i class="fas fa-download"></i>
-                            </a>
-                        </div>
-                        <iframe id="resumeIframe" src="" width="100%" height="600px"></iframe>
                     </div>
                 </div>
             </div>
