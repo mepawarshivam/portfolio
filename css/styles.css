@@ -852,10 +852,8 @@ section {
 }
 
 .resume-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: start;
+    display: flex;
+    justify-content: center;
     margin-top: 3rem;
 }
 
@@ -865,6 +863,8 @@ section {
     border-radius: 1rem;
     box-shadow: var(--shadow-lg);
     transition: var(--transition);
+    max-width: 600px;
+    width: 100%;
 }
 
 .resume-card:hover {
@@ -931,13 +931,6 @@ section {
     min-width: fit-content;
 }
 
-.resume-preview-container {
-    background: var(--bg-primary);
-    border-radius: 1rem;
-    box-shadow: var(--shadow-lg);
-    overflow: hidden;
-}
-
 .resume-preview {
     background: var(--bg-primary);
     border-radius: 1rem;
@@ -946,64 +939,8 @@ section {
     text-align: center;
 }
 
-.preview-placeholder {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    min-height: 20rem;
-}
-
-.preview-placeholder i {
-    font-size: 4rem;
-    color: var(--primary-color);
-    margin-bottom: 1.5rem;
-    opacity: 0.7;
-}
-
-.preview-placeholder h4 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: 1rem;
-}
-
-.preview-placeholder p {
-    color: var(--text-secondary);
-    margin-bottom: 2rem;
-    max-width: 20rem;
-}
-
-.document-types {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    justify-content: center;
-}
-
-.doc-type {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    background: var(--bg-secondary);
-    border-radius: 0.5rem;
-    color: var(--text-secondary);
-    font-size: 0.875rem;
-}
-
-.doc-type i {
-    color: var(--primary-color);
-}
-
 /* Resume Section Responsive */
 @media (max-width: 968px) {
-    .resume-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
     .resume-actions {
         flex-direction: column;
     }
@@ -1014,18 +951,7 @@ section {
 }
 
 @media (max-width: 640px) {
-    .resume-card,
-    .resume-preview-container {
+    .resume-card {
         padding: 1.5rem;
-    }
-    
-    .document-types {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .doc-type {
-        width: 100%;
-        justify-content: center;
     }
 }
