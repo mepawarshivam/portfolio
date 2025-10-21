@@ -300,7 +300,7 @@
     <section id="resume" class="resume">
         <div class="container">
             <h2 class="section-title">Resume</h2>
-            <p class="section-subtitle">Download my latest resume and portfolio documents</p>
+            <p class="section-subtitle">View and download my latest resume</p>
             
             <div class="resume-content">
                 <div class="resume-card">
@@ -325,28 +325,46 @@
                             </div>
                         </div>
                         <div class="resume-actions">
-                            <a href="https://drive.google.com/drive/folders/1V4o-I6AA3P73k5PKXZLs9mnwaBmO16w4" target="_blank" class="btn btn-primary">
+                            <button onclick="openResumePreview()" class="btn btn-primary">
+                                <i class="fas fa-eye"></i>
+                                Preview Resume
+                            </button>
+                            <a href="assets/documents/Shivam_Pawar_Resume.pdf" download="Shivam_Pawar_Resume.pdf" class="btn btn-secondary">
                                 <i class="fas fa-download"></i>
-                                View Resume & Documents
+                                Download PDF
                             </a>
-                            <a href="mailto:shivammpawar@gmail.com?subject=Resume%20Request&body=Hi%20Shivam,%0A%0AI%20would%20like%20to%20request%20a%20copy%20of%20your%20resume." class="btn btn-secondary">
-                                <i class="fas fa-envelope"></i>
-                                Request via Email
+                        </div>
+                        <div class="resume-backup-actions">
+                            <p class="backup-text">Alternative access:</p>
+                            <a href="https://drive.google.com/drive/folders/1V4o-I6AA3P73k5PKXZLs9mnwaBmO16w4" target="_blank" class="btn btn-outline">
+                                <i class="fas fa-cloud"></i>
+                                View on Google Drive
                             </a>
                         </div>
                     </div>
                 </div>
                 
-                <div class="resume-preview">
-                    <div class="preview-placeholder">
+                <div class="resume-preview-container">
+                    <div class="preview-placeholder" id="resumePreviewPlaceholder">
                         <i class="fas fa-file-alt"></i>
                         <h4>Resume Preview</h4>
-                        <p>Click the link above to access my complete resume and portfolio documents on Google Drive.</p>
+                        <p>Click "Preview Resume" to view the PDF in your browser, or download directly.</p>
                         <div class="document-types">
                             <span class="doc-type"><i class="fas fa-file-pdf"></i> PDF Format</span>
-                            <span class="doc-type"><i class="fas fa-file-word"></i> Word Format</span>
-                            <span class="doc-type"><i class="fas fa-folder"></i> Portfolio</span>
+                            <span class="doc-type"><i class="fas fa-eye"></i> Browser Preview</span>
+                            <span class="doc-type"><i class="fas fa-download"></i> Direct Download</span>
                         </div>
+                    </div>
+                    <div class="pdf-viewer" id="pdfViewer" style="display: none;">
+                        <div class="pdf-controls">
+                            <button onclick="closeResumePreview()" class="close-btn">
+                                <i class="fas fa-times"></i>
+                            </button>
+                            <a href="assets/documents/Shivam_Pawar_Resume.pdf" download="Shivam_Pawar_Resume.pdf" class="download-btn">
+                                <i class="fas fa-download"></i>
+                            </a>
+                        </div>
+                        <iframe id="resumeIframe" src="" width="100%" height="600px"></iframe>
                     </div>
                 </div>
             </div>

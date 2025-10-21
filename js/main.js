@@ -163,3 +163,62 @@ const footerText = document.querySelector('.footer-content p');
 if (footerText) {
     footerText.textContent = footerText.textContent.replace('2025', currentYear);
 }
+
+// Resume PDF Preview Functions
+function openResumePreview() {
+    const placeholder = document.getElementById('resumePreviewPlaceholder');
+    const pdfViewer = document.getElementById('pdfViewer');
+    const iframe = document.getElementById('resumeIframe');
+    
+    // Check if PDF file exists
+    const pdfPath = 'assets/documents/Shivam_Pawar_Resume.pdf';
+    
+    // Hide placeholder and show PDF viewer
+    placeholder.style.display = 'none';
+    pdfViewer.style.display = 'block';
+    
+    // Load PDF in iframe
+    iframe.src = pdfPath;
+    
+    // Add loading state
+    iframe.onload = function() {
+        console.log('Resume PDF loaded successfully');
+    };
+    
+    iframe.onerror = function() {
+        console.error('Error loading resume PDF');
+        // Fallback to Google Drive if local PDF fails
+        window.open('https://drive.google.com/drive/folders/1V4o-I6AA3P73k5PKXZLs9mnwaBmO16w4', '_blank');
+        closeResumePreview();
+    };
+}
+
+function closeResumePreview() {
+    const placeholder = document.getElementById('resumePreviewPlaceholder');
+    const pdfViewer = document.getElementById('pdfViewer');
+    const iframe = document.getElementById('resumeIframe');
+    
+    // Show placeholder and hide PDF viewer
+    placeholder.style.display = 'flex';
+    pdfViewer.style.display = 'none';
+    
+    // Clear iframe source
+    iframe.src = '';
+}
+
+// Check if resume file exists on page load
+window.addEventListener('load', () => {
+    setTimeout(typeWriter, 500);
+    
+    // Check for resume file availability
+    fetch('assets/documents/Shivam_Pawar_Resume.pdf', { method: 'HEAD' })
+        .then(response => {
+            if (!response.ok) {
+                // If file doesn't exist, show a message
+                console.log('Resume PDF not found locally. Users will be directed to Google Drive.');
+            }
+        })
+        .catch(error => {
+            console.log('Resume PDF check failed. Fallback to Google Drive available.');
+        });
+});
